@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+button {
+	border: none;
+	cursor: pointer;
+}
+
+body {
+	font-family: "Archivo Black", sans-serif;
+	background-color: #faea18;
+}
+
+.container {
+	max-width: 1440px;
+	width: 100%;
+	margin: auto;
+	height: 100vh;
+}
+
+.flex {
+	display: flex;
+}
+
+.fcb {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.gap-10 {
+	gap: 10px;
+}
+
+.relative {
+	position: relative;
+}
+
+.btn {
+	padding: 10px 40px;
+	box-shadow: 0px 4px 0px 0px #00000040;
+	border-radius: 12px;
+	border: 5px solid #ffffff;
+	color: #ffffff;
+}
+
+.btn-download {
+	position: absolute;
+	bottom: 3%;
+	left: 0;
+	max-height: 36px;
+	font-size: 20px;
+	font-weight: 900;
+	background-color: #0394c3;
+	text-transform: lowercase;
+	color: #ffffff;
+	border-radius: 12px;
+	padding: 10px 20px;
+	box-shadow: 0px 4px 0px 0px #00000040;
+	outline: 3px solid #fff;
+}
+
+.btn-save {
+	background-color: #a1a1a1;
+	font-size: 1.8rem;
+	font-weight: 900;
+}
+
+/* Landing Page */
+
+.landing {
+	height: 100%;
+	width: 100%;
+	max-width: 390px;
+	margin: auto;
+}
+
+main {
+	width: 100%;
+	background-image: url("./assets/background.png");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: calc(100% - 230px);
+	overflow: hidden;
+}
+
+nav {
+	padding-top: 10px;
+}
+
+nav img {
+	cursor: pointer;
+}
+
+.passport {
+	height: 100%;
+	padding-inline: 10px;
+}
+.passport > img {
+	width: 172px;
+	height: 245px;
+}
+
+.passport_card {
+	position: absolute;
+	top: 4rem;
+	left: 60px;
+	width: 300px;
+	height: 50vh;
+	background-color: #ffffff;
+	rotate: 10deg;
+	border-radius: 25px;
+	box-shadow: 4px 4px 4px 0px #4b4b4b4d;
+}
+
+.passport_card-inner {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	right: 0;
+	min-height: 25vh;
+	background-color: #ffffff;
+	border-radius: 25px 25px 0 0;
+	background: linear-gradient(
+		180.82deg,
+		#ffffff 0.71%,
+		#fafafa 21.24%,
+		#ebebeb 61.81%,
+		#e1e1e1 83.37%,
+		#929292 99.29%
+	);
+
+	box-shadow: -4px 0px 45px 0px #00000040;
+}
+
+.passport-upper {
+	padding: 8px;
+	rotate: -11deg;
+	align-items: flex-start;
+}
+
+.passport-lower {
+	background: linear-gradient(
+		0deg,
+		#ffffff 0.71%,
+		#fafafa 21.24%,
+		#ebebeb 61.81%,
+		#e1e1e1 83.37%,
+		#929292 99.29%
+	);
+	overflow: hidden;
+	left: 0;
+	right: 0;
+	position: absolute;
+	bottom: 4px;
+	border-radius: 0 0 25px 25px;
+	box-shadow: 0px 4px 4px 0px #4b4b4b4d;
+}
+
+.passport-lower > div {
+	max-height: 25vh;
+	padding: 10px;
+}
+.passport-lower img {
+	height: 170px;
+	width: 290px;
+	margin-left: -6px;
+	rotate: -11deg;
+	margin-top: -17px;
+}
+
+.passport-lower h6 {
+	text-align: center;
+	font-size: 20px;
+	color: #a9a000;
+	font-weight: 900;
+	text-shadow: 2px 2px #021689;
+}
+
+.passport-details {
+	rotate: 11deg;
+	padding-block: 10px;
+    position: relative;
+    height: 20vh;
+    width: 100%;
+}
+
+.passport-details h5 {
+	font-size: 15px;
+	color: #021689;
+	font-weight: 700;
+}
+
+.passport-details h3 {
+	font-size: 35px;
+	color: #0394c3;
+	font-weight: 900;
+	text-shadow: 2px 2px #021689;
+	word-wrap: normal;
+	word-break: break-all;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+}
+
+.passport-details p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #faea18;
+	font-size: 11px;
+	font-weight: 900;
+	text-shadow: 2px 2px #0394c3;
+}
+
+.cta-edit {
+    position: absolute;
+    width: 30px;
+    right: -5px;
+    cursor: pointer;
+}
+
+/* Camera Page */
+
+.page-camera {
+	margin: auto;
+	width: 70%;
+	height: 67vh;
+	background-color: #ffffff;
+	border: 1px solid #faea18;
+	border-radius: 23px;
+}
+
+.page-camera .camera {
+	width: 80%;
+	margin: 10px auto;
+	background: #343434;
+	height: 67%;
+	border: 3px dotted #afafaf;
+	border-radius: 7px;
+}
+
+.cta-click {
+	position: absolute;
+	bottom: 3px;
+	left: 50%;
+	right: 50%;
+	transform: translateX(-50%);
+    cursor: pointer;
+
+}
+
+.cta-close {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+    cursor: pointer;
+
+}
+
+.actions {
+	text-align: center;
+}
+
+.actions input {
+	box-shadow: 2px 2px 1px 0px #00000040 inset;
+	color: #979797;
+	font-size: 16px;
+	font-weight: 900;
+	text-align: center;
+	background: #afafaf;
+	padding: 8px;
+	border-radius: 8px;
+	margin-bottom: 12px;
+	width: 80%;
+}
+
+footer {
+	width: 100%;
+	margin: auto;
+}
+
+footer img {
+	position: fixed;
+	right: 50%;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	height: 138px;
+}
