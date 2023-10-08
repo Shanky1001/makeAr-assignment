@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { GetContext } from '../App'
 import { downloadIcon, dummyProfile, editIcon, passport, worldMap } from '../assets'
 
-
 const Landing = () => {
     const { data, camera, handleCameraMode } = GetContext();
 
@@ -23,7 +22,7 @@ const Landing = () => {
                         <div className='relative'>
                             {data.img ?
                                 <img src={data.img} alt="profile-pic" width="120px" height={"130px"} className="profile-pic" /> :
-                                <img src={dummyProfile} alt="profile-pic" width="120px" height={"130px"} />}
+                                <img src={dummyProfile} alt="profile-pic" width="120px" height={"130px"} onClick={handleCameraMode} />}
                             <img src={editIcon} alt="edit-button" className='cta-edit' onClick={handleCameraMode} />
                         </div>
                         <div className='passport-details'>
@@ -38,15 +37,16 @@ const Landing = () => {
                 <div className="passport-lower">
                     <div className='relative'>
                         <h6>Continents Explored</h6>
-                        <img src={worldMap} alt="world-map" width={"100%"} height={"100%"} />
+                        <div className='relative map-world'>
+
+                        </div>
+                        {/* <img src={worldMap} alt="world-map" width={"100%"} height={"100%"} /> */}
                     </div>
                 </div>
             </div>
-            <a href={data.img} download={"imageName"} className='btn-download flex align-center gap-10'>
-                {/* <button className='btn-download flex align-center gap-10'> */}
+            <a href={data.img} download={data.name || "profile_pic"} className='btn-download flex align-center gap-10'>
                 <img src={downloadIcon} alt="download-icon" height={"20px"} />
                 <span>Download</span>
-                {/* </button> */}
             </a>
         </div>
     )

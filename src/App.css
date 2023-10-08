@@ -92,7 +92,8 @@ main {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: calc(100% - 230px);
+	height: calc(100% - 115px);
+	/* height: 100%; */
 	overflow: hidden;
 }
 
@@ -115,10 +116,10 @@ nav img {
 
 .passport_card {
 	position: absolute;
-	top: 4rem;
-	left: 60px;
+	top: 11%;
+	left: 11%;
 	width: 300px;
-	height: 50vh;
+	height: 400px;
 	background-color: #ffffff;
 	rotate: 10deg;
 	border-radius: 25px;
@@ -130,7 +131,7 @@ nav img {
 	top: 4px;
 	left: 0;
 	right: 0;
-	min-height: 25vh;
+	height: 50%;
 	background-color: #ffffff;
 	border-radius: 25px 25px 0 0;
 	background: linear-gradient(
@@ -149,6 +150,7 @@ nav img {
 	padding: 8px;
 	rotate: -11deg;
 	align-items: flex-start;
+	height: 100%;
 }
 
 .profile-pic {
@@ -171,10 +173,12 @@ nav img {
 		#929292 99.29%
 	);
 	overflow: hidden;
+	top: 50%;
 	left: 0;
 	right: 0;
 	position: absolute;
 	bottom: 4px;
+	min-height: 171px;
 	border-radius: 0 0 25px 25px;
 	box-shadow: 0px 4px 4px 0px #4b4b4b4d;
 }
@@ -203,7 +207,7 @@ nav img {
 	rotate: 11deg;
 	padding-block: 10px;
 	position: relative;
-	height: 22vh;
+	height: 100%;
 	width: 100%;
 }
 
@@ -245,6 +249,20 @@ nav img {
 	right: -5px;
 	cursor: pointer;
 }
+
+/* World Map */
+
+.map-world {
+	width: 100%;
+	margin-top: 10px;
+	height: 140px;
+	border-radius: 10px;
+	background-color: #0394C3;
+}
+
+
+
+
 
 /* Camera Page */
 
