@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
+import { useRef } from 'react';
 import { GetContext } from '../App'
 import { downloadIcon, dummyProfile, editIcon, passport, worldMap } from '../assets'
+import { lockRegion, path } from '../constant';
 
 const Landing = () => {
     const { data, camera, handleCameraMode } = GetContext();
-
+    const mapRef = useRef()
     useEffect(() => {
         camera?.getVideoTracks().forEach(element => {
             if (element.enabled) {
@@ -12,6 +14,27 @@ const Landing = () => {
             }
         });
     }, [camera])
+
+    const setLockAttribute = (newPath, val) => {
+        newPath.setAttributeNS(null, "d", val.path)
+        newPath.setAttributeNS(null, "fill", val.fill)
+        newPath.setAttributeNS(null, "class", "lock")
+        return newPath
+    }
+
+    const notLockAttribute = (newPath, val) => {
+        newPath.setAttributeNS(null, "d", val.path)
+        newPath.setAttributeNS(null, "fill", val.fill)
+        return newPath
+    }
+
+    useEffect(() => {
+        path.map((val, i) => {
+            let newPath = document.createElementNS('http://www.w3.org/2000/svg', "path");
+            lockRegion.indexOf(val.id) > -1 ? setLockAttribute(newPath, val) : notLockAttribute(newPath, val);
+            return mapRef.current.appendChild(newPath)
+        })
+    }, [])
 
     return (
         <div className='passport relative'>
@@ -38,7 +61,9 @@ const Landing = () => {
                     <div className='relative'>
                         <h6>Continents Explored</h6>
                         <div className='relative map-world'>
+                            <svg ref={mapRef} width={"370"} height={"140"} viewBox={"15 40 340 130"}>
 
+                            </svg>
                         </div>
                         {/* <img src={worldMap} alt="world-map" width={"100%"} height={"100%"} /> */}
                     </div>

@@ -160,7 +160,7 @@ nav img {
 	height: 130px !important;
 	margin-right: 15px;
 	border: 2px solid #021689;
-	box-shadow: 2px 2px 0px 0px #0394C3;
+	box-shadow: 2px 2px 0px 0px #0394c3;
 }
 
 .passport-lower {
@@ -253,16 +253,43 @@ nav img {
 /* World Map */
 
 .map-world {
-	width: 100%;
-	margin-top: 10px;
-	height: 140px;
+	margin-top: 8px;
+	background-color: #0394c3;
 	border-radius: 10px;
-	background-color: #0394C3;
 }
 
+.map-world svg {
+	rotate: -5deg;
+}
 
+.lock {
+	position: relative;
+}
 
+.lock::after {
+	position: absolute;
+	content: url("./assets/lock-img.jpg");
+	width: 10px;
+	height: 10px;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+}
 
+.check {
+	position: relative;
+}
+
+.check::after {
+	position: absolute;
+	content: url("./assets/check.png");
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
 
 /* Camera Page */
 
