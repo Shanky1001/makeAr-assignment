@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { GetContext } from '../App'
 import { downloadIcon, dummyProfile, editIcon, passport, worldMap } from '../assets'
 
 
 const Landing = () => {
-    const { data, handleCameraMode } = GetContext()
+    const { data, camera, handleCameraMode } = GetContext();
+
+    useEffect(() => {
+        camera?.getVideoTracks().forEach(element => {
+            if (element.enabled) {
+                element.stop()
+            }
+        });
+    }, [camera])
+
     return (
         <div className='passport relative'>
             <img src={passport} alt="passport" width={"172px"} />
@@ -12,7 +21,9 @@ const Landing = () => {
                 <div className='passport_card-inner'>
                     <div className="passport-upper flex">
                         <div className='relative'>
-                            <img src={data.img || dummyProfile} alt="profile-pic" />
+                            {data.img ?
+                                <img src={data.img} alt="profile-pic" width="120px" height={"130px"} className="profile-pic" /> :
+                                <img src={dummyProfile} alt="profile-pic" width="120px" height={"130px"} />}
                             <img src={editIcon} alt="edit-button" className='cta-edit' onClick={handleCameraMode} />
                         </div>
                         <div className='passport-details'>
@@ -31,10 +42,12 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-            <button className='btn-download flex align-center gap-10'>
+            <a href={data.img} download={"imageName"} className='btn-download flex align-center gap-10'>
+                {/* <button className='btn-download flex align-center gap-10'> */}
                 <img src={downloadIcon} alt="download-icon" height={"20px"} />
                 <span>Download</span>
-            </button>
+                {/* </button> */}
+            </a>
         </div>
     )
 }
