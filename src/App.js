@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import './App.css';
 import Layout from './components/Layout';
 
@@ -6,27 +6,24 @@ const context = createContext()
 
 function App() {
 
-  const [data, setData] = useState({ img: "", name: "" })
-  const [err, setError] = useState(false)
+  const [data, setData] = useState(JSON.parse(localStorage.getItem("data")) || { img: "", name: "" })
+  const [camera, setCamera] = useState();
   const [cameraMode, setCameraMode] = useState(false);
   const handleCameraMode = () => {
     setCameraMode(!cameraMode)
+    localStorage.setItem("data", JSON.stringify(data))
   }
+
   // to handle changes in data
-  const handleData = useCallback((key, value) => {
-    if (key === "name") {
-      setError(true);
-      return
-    }
-    setData({ ...data, [key]: value })
-  }, [data])
+  const handleData = (key, value) => {
+    setData(() => { return { ...data, [key]: value } })
+    localStorage.setItem("data", JSON.stringify(data))
+  }
 
   return (
-    <div className="App">
-      <context.Provider value={{ data, handleData, err, cameraMode, handleCameraMode }}>
-        <Layout />
-      </context.Provider>
-    </div>
+    <context.Provider value={{ data, handleData, setCamera, camera, cameraMode, handleCameraMode }}>
+      <Layout />
+    </context.Provider>
   );
 }
 
