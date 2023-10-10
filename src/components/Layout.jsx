@@ -15,9 +15,9 @@ const Layout = () => {
                 <main className='relative'>
                     {!cameraMode ? <Landing /> : <Camera />}
                 </main>
-                <footer>
+                {/* <footer>
                     <img src={bottomBar} alt='bottom-bar' width={"390px"} />
-                </footer>
+                </footer> */}
             </div>
         </div>
     )
